@@ -1,4 +1,3 @@
-
 # SAFE-SIM
 
 This repository is the official implementation of [SAFE-SIM: Safety-Critical Closed-Loop Traffic Simulation with Diffusion-Controllable Adversaries](https://arxiv.org/abs/2401.00391). 
@@ -21,7 +20,7 @@ Evaluating the performance of autonomous vehicle planning algorithms necessitate
 - [x] Code release 
 - [x] Initial repository & preprint release
 
-This repo is mostly built on top of [traffic-behavior-simulation (tbsim)](https://github.com/NVlabs/traffic-behavior-simulation), which handle datasets based on [trajdata](https://github.com/NVlabs/trajdata). The diffusion model are build on top of [MID](https://github.com/Gutianpei/MID), and [diffuser](https://github.com/jannerm/diffuser).
+This repo is mostly built on top of [traffic-behavior-simulation (tbsim)](https://github.com/NVlabs/traffic-behavior-simulation), which handle datasets based on [trajdata](https://github.com/NVlabs/trajdata). The diffusion model are build on top of [MID](https://github.com/Gutianpei/MID), and [diffuser](https://github.com/jannerm/diffuser).
 
 ## 1. Environment Setup
 
@@ -32,7 +31,7 @@ conda create -n safesim python=3.8
 conda activate safesim
 ```
 
-Install `safesim` (this repo)
+Install `safesim` (this repo)
 
 ```
 git clone https://github.com/jxmmy7777/safe-sim.git
@@ -40,7 +39,7 @@ cd safesim
 pip install -e .
 ```
 
-Install modified version of `trajdata`
+Install modified version of `trajdata`
 
 ```
 cd ..
@@ -86,10 +85,10 @@ python examples/preprocess_data.py
 
 ## 3. Quick Start
 
-- Pretrained checkpoints can be downloaded at
-    
-    `git clone https://huggingface.co/wjchang/safesim_checkpoints`
-    
+- Pretrained checkpoints can be downloaded with:
+  ```bash
+  git clone https://huggingface.co/wjchang/safesim_checkpoints
+  ```
 - Update the checkpoint path in `evaluation/Diffusion.yaml`
 
 ### Running_adv_simulation
@@ -108,14 +107,13 @@ scripts/run_adv_simulation.py \
 ```
 ### Key Arguments:
 | Argument | Description |
-| --- | --- |
+| ---------- | -------- |
 | `--results_root_dir` | Directory to store simulation results |
-| `--num_scenes_per_batch` | Number of scenes processed per batch |
 | `--env` | Specifies the dataset environment (e.g., `nusc`) |
 | `--guidance_fn` | Specifies the adversarial guidance function |
 | `--guidance_params` | Defines hyperparameters for guidance (e.g., control weights) |
 | `--eval_class` | The planner to evaluate (`StrivePolicy_trajdata`, `HierAgentAware`,`IDMPolicy` etc.) |
-| `--agent_eval_class` | The reactive agent  model (e.g., `Diffusion`) |
+| `--agent_eval_class` | The reactive agent model (e.g., `Diffusion`) |
 
 Detailed arguments can be found in [simulation_doc](docs/simulation_doc.md).
 Overview of the code structure can be found in [code_structure](docs/code_structure.md).
@@ -123,14 +121,11 @@ Overview of the code structure can be found in [code_structure](docs/code_struct
 ### Visualization
 
 ```python
-python scripts/visualize.py --output_dir=$OUTPUTPATH --dataset_path=$DATAPATH \
-  --env=nusc --hdf5_path=$PATHDOHDF5
+python scripts/visualize.py --output_dir=$OUTPUTPATH --dataset_path=$DATAPATH --env=nusc --hdf5_path=$PATHDOHDF5
 ```
 ## Contact
 If you have any questions or suggestions, please feel free to open an issue or scontact us (weijer_chang@berkeley.edu).
 
-## Citation
-If you find SAFE-SIM useful, please consider giving us a star; and citing our paper with the following BibTeX entry.
 
 ## License
 
@@ -141,6 +136,9 @@ This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 I
 Accordingly, any use of this repository must also comply with the terms of the NVIDIA Source Code License - NC, including the non-commercial use restriction.
 
 By using this repository, you agree to follow **both** the NVIDIA Source Code License - NC and the CC BY-NC 4.0 License.
+
+## Citation
+If you find SAFE-SIM useful, please consider giving us a star; and citing our paper with the following BibTeX entry.
 ```BibTeX
 @inproceedings{chang2024safesimsafetycriticalclosedlooptraffic,
   author    = {Wei-Jer Chang and Francesco Pittaluga and Masayoshi Tomizuka and Wei Zhan and Manmohan Chandraker},
