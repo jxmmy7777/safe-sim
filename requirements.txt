@@ -1,0 +1,47 @@
+# Python 3.8
+
+# Core ML & Deep Learning
+numpy>=1.19.0
+torch>=1.13.1
+torchtext
+torchvision 
+pytorch-lightning==1.9.0
+wandb
+einops
+
+# Data Processing & Analysis
+pandas>=1.4.1
+dill>=0.3.4
+pyarrow>=7.0.0
+h5py
+pyemd
+zarr>=2.11.0
+tqdm>=4.62
+openpyxl
+# Visualization
+matplotlib>=3.5
+seaborn>=0.12
+bokeh>=3.0.3
+kornia>=0.6.4
+imageio-ffmpeg
+imageio
+geopandas>=0.13.2
+scipy>=1.9.0
+opencv-python>=4.5.0
+shapely>=2.0.0
+
+# Graph Processing
+networkx
+python-louvain
+
+# Dataset Dependencies
+## nuScenes
+nuscenes-devkit==1.1.9
+
+# Development Tools
+black==22.1.0
+isort==5.10.1
+pytest==7.1.1
+pytest-xdist==2.5.0
+twine
+build
